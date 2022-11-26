@@ -1,26 +1,31 @@
-const spoiler = document.querySelectorAll('.spoiler');
-const spoilerWrapper = document.querySelectorAll('.spoiler__wrapper')
+window.addEventListener('DOMContentLoaded', ()=> {
 const body = document.querySelector('body');
-// if (spoiler) {
-//   body.addEventListener('click', spoilerToggle);
-//   function spoilerToggle(e) {
-//     if (e.target.closest('.spoiler')) {
-//       if (e.target.closest('.spoiler').classList.contains('active')) {
-//         e.target.closest('.spoiler').classList.remove('active');
-//         e.target.closest('.spoiler__preview').nextElementSibling.style.height = null;
-//       } else if (e.target.closest('.spoiler')) {
-//         spoiler.forEach(function (el) {
-//           el.classList.remove('active');
-//         });
-//         spoilerWrapper.forEach(function (el) {
-//           el.style.height = null;
-//         });
-//         e.target.closest('.spoiler').classList.toggle('active');
-//         e.target.closest('.spoiler__preview').nextElementSibling.style.height = e.target.closest('.spoiler__preview').nextElementSibling.scrollHeight + 'px';
-//       }
-//     }
-//   }
-// }
+const selectDefault = document.querySelectorAll('.form__select');
+const placeholderText = ['Practice / Institution*', 'Medical Profession*', 'Type of Inquiry*'];
+selectDefault.forEach((item, i) => {
+  item.style.display = 'none';
+  let customSelect = document.createElement('div');
+  customSelect.classList.add('spoiler');
+  customSelect.innerHTML = `
+                <div class="spoiler__preview">
+                  <div class="spoiler__left">${placeholderText[i]}</div>
+                  <div class="spoiler__right">
+                    <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M1.175 0L5 3.71159L8.825 0L10 1.14825L5 6L0 1.14825L1.175 0Z" fill="#545A6D" fill-opacity="0.6"/>
+                      </svg>
+                  </div>
+                </div>
+                <div class="spoiler__wrapper">
+                  <div class="spoiler__item">Option 1</div>
+                  <div class="spoiler__item">Option 2</div>
+                  <div class="spoiler__item">Option 3</div>
+                  <div class="spoiler__item">Option 4</div>
+                  <div class="spoiler__item">Option 5</div>
+                </div>
+                `;
+ item.after(customSelect);
+});
+
 body.addEventListener('click', spoilerClicker);
 function spoilerClicker(e) {
   if (document.querySelector(".spoiler__preview")) {
@@ -41,21 +46,13 @@ function spoilerClicker(e) {
        }
     }
     if (e.target.closest(".spoiler__item")) {
-       e.target.closest(
-          ".spoiler__item"
-       ).parentElement.parentElement.firstElementChild.firstElementChild.textContent =
-          e.target.closest(".spoiler__item").textContent;
+       e.target.closest(".spoiler__item").parentElement.parentElement.firstElementChild.firstElementChild.textContent = e.target.closest(".spoiler__item").textContent;
+       e.target.closest(".spoiler__item").parentElement.parentElement.firstElementChild.firstElementChild.style.color = '#424242';
        e.target.closest(".spoiler").classList.remove("active");
        e.target.closest(".spoiler__wrapper").style.height = null;
     }
   }
 }
-// const select = document.querySelector('select');
-// let optionValues = [];
-// for (let option of select.options) {
-//   optionValues.push(option.label);
-// }
-// console.log(optionValues);
 
 function initMap() {
   let map = new google.maps.Map(document.getElementById("contactsMap"), {
@@ -300,3 +297,4 @@ function initMap() {
   info.open(map, marker);
 }
 window.initMap = initMap;
+});
