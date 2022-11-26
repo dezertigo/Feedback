@@ -257,7 +257,7 @@ function initMap() {
   let marker = new google.maps.Marker({
     position: {lat: 50.4633236482645, lng: 30.51960270400255},
     map: map,
-    icon: '../location-icon.svg',
+    icon: '../img/location-icon.svg',
   });
 
   let info = new google.maps.InfoWindow({
