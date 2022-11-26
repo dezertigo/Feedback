@@ -21,8 +21,8 @@
             The Voodoo team is looking forward to hearing from you!
           </p>
           <form action="#" class="form">
-            <input type="text" class="form__input" placeholder="Full Name*">
-            <input type="text" class="form__input" placeholder="Title/Position*">
+            <input type="text" class="form__input" placeholder="Full Name*" required>
+            <input type="text" class="form__input" placeholder="Title/Position*" required>
             <!-- <select name="" id="" class="form__select">
               <option value="1" class="form__option">test</option>
               <option value="2" class="form__option">test2</option>
@@ -44,8 +44,8 @@
                 <div class="spoiler__item">3</div>
               </div>
             </div>
-            <input type="email" class="form__input" placeholder="Email Address*">
-            <input type="tel" class="form__input" placeholder="Phone Number*">
+            <input type="email" class="form__input" placeholder="Email Address*" required>
+            <input type="tel" class="form__input" placeholder="Phone Number*" required>
             <!-- <select name="" id="" class="form__select">
               <option value="1" class="form__option">1</option>
               <option value="2" class="form__option">2</option>
@@ -73,7 +73,7 @@
                 <div class="spoiler__item">3</div>
               </div>
             </div>
-            <div class="spoiler">
+            <div class="spoiler spoiler--inquary">
               <div class="spoiler__preview">
                 <div class="spoiler__left">Type of Inquiry*</div>
                 <div class="spoiler__right">
@@ -97,6 +97,10 @@
       </div>
     </div>
   </section>
+  <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCb6gcIbrTn2ZXXuMLq_BZ1qsJy9cEWDJg&callback=initMap"
+      async defer
+    ></script>
   <script src="./js/script.js"></script>
 </body>
 </html>
