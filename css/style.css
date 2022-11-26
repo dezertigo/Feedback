@@ -186,7 +186,7 @@ filter: blur(250px);
 .address__location {
   font-size: 12px;
   line-height: 20px;
-  max-width: 180px;
+  max-width: 160px;
   width: 100%;
   font-style: normal;
 }
