@@ -6,6 +6,14 @@ selectDefault.forEach((item, i) => {
   item.style.display = 'none';
   let customSelect = document.createElement('div');
   customSelect.classList.add('spoiler');
+  let arrOption = [];
+  for (let option of item.options) {
+    arrOption.push(option.label)
+  }
+  let valueOpt ='';
+  arrOption.forEach(el => {
+    valueOpt +=`<div class="spoiler__item">${el}</div>`
+  })
   customSelect.innerHTML = `
                 <div class="spoiler__preview">
                   <div class="spoiler__left">${placeholderText[i]}</div>
@@ -16,11 +24,7 @@ selectDefault.forEach((item, i) => {
                   </div>
                 </div>
                 <div class="spoiler__wrapper">
-                  <div class="spoiler__item">Option 1</div>
-                  <div class="spoiler__item">Option 2</div>
-                  <div class="spoiler__item">Option 3</div>
-                  <div class="spoiler__item">Option 4</div>
-                  <div class="spoiler__item">Option 5</div>
+                ${valueOpt}
                 </div>
                 `;
  item.after(customSelect);
