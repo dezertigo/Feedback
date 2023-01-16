@@ -68,7 +68,7 @@ function initMap() {
         "elementType": "geometry",
         "stylers": [
           {
-            "color": "#f5f5f5"
+            "color": "#FCFAF6"
           }
         ]
       },
@@ -92,7 +92,7 @@ function initMap() {
         "elementType": "labels.text.stroke",
         "stylers": [
           {
-            "color": "#f5f5f5"
+            "color": "#FCFAF6"
           }
         ]
       },
