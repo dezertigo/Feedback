@@ -267,7 +267,7 @@ function initMap() {
   let info = new google.maps.InfoWindow({
     content: `<div class="address">
     <p class="address__title">
-      Voodoo
+      WebDev
     </p>
     <address class="address__location">
       137 Glasgow St., Unit 115 Kitchener, ON N2G 4X8 Ukraine
@@ -292,7 +292,7 @@ function initMap() {
             </svg>
         </div>
         <a href="#" class="address__link">
-          info@voodoo.com
+          info@webteam.com
         </a>
       </li>
     </ul>
